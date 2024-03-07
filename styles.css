@@ -1,0 +1,25 @@
+.ES {
+    display: block;
+    /* Default display */
+}
+
+.EN {
+    display: none;
+    /* Initially hidden */
+}
+
+body{
+    background-color:black;
+    color:gray;
+}
+
+#profile-photo>img {
+    width: 250px;
+    height: auto;
+}
+
+#presentation {
+    display: flex;
+    width: 500px;
+    gap: 1em;
+}
