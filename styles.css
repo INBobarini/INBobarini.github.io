@@ -1,3 +1,49 @@
+body{
+    background-color:black; 
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+*{
+    font-family:roboto;
+    background-color:black;
+    color:gray
+}
+
+div{
+    border: 1px red solid;
+}
+container{
+    display:flex;
+    flex-direction: column;
+    background-color: #171717;
+}
+/*HERO SECTION*/
+#hero-section{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+/*PRESENTATION SECTION*/
+#presentation-section {
+    display:flex;
+    justify-content:space-evenly;
+    height:25%
+}
+
+#profile-photo{
+    width: 35%;
+    height: auto;
+    display:flex;
+}
+#profile-photo>img{
+    width: 50%;
+    margin:auto;
+}
+#presentation{
+    width: 35%;
+}
 .ES {
     display: block;
     /* Default display */
@@ -8,18 +54,30 @@
     /* Initially hidden */
 }
 
-body{
-    background-color:black;
-    color:gray;
+.accordion {
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-#profile-photo>img {
-    width: 250px;
-    height: auto;
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
 }
 
-#presentation {
-    display: flex;
-    width: 500px;
-    gap: 1em;
+.accordion-header {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+}
+/*
+colors{
+    #171717
+    #444444
+    #DA0037
+    #EDEDED
+*/
