@@ -1,83 +1,102 @@
-body{
-    background-color:black; 
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-}
-*{
-    font-family:roboto;
-    background-color:black;
-    color:gray
+:root{
+  --clr-black:#171717;
+  --clr-darkgray:#444444;
+  --clr-deepred:#DA0037;
+  --clr-silver:#EDEDED;
 }
 
-div{
-    border: 1px red solid;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+* {
+  font-family: 'Avenir', sans-serif;
+  color: var(--clr-deepred);
+}
+
+div {
+  border: 1px red solid;
+}
+
 container{
-    display:flex;
-    flex-direction: column;
-    background-color: #171717;
-}
-/*HERO SECTION*/
-#hero-section{
-    height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-/*PRESENTATION SECTION*/
-#presentation-section {
-    display:flex;
-    justify-content:space-evenly;
-    height:25%
+  display:flex;
+  flex-direction:columns;
+  max-width:100vw;
 }
 
-#profile-photo{
-    width: 35%;
-    height: auto;
-    display:flex;
+/*HERO SECTION*/
+#hero-section {
+  background-image: linear-gradient(var(--clr-black),var(--clr-darkgray), var(--clr-silver));
 }
-#profile-photo>img{
-    width: 50%;
-    margin:auto;
+#presentation {
+  display:flex
 }
-#presentation{
-    width: 35%;
+#profile-photo {
+  width: 50vw;
+  height: auto;
+  display: flex;
 }
+#profile-photo > img {
+  width: 25vw;
+  margin: auto;
+}
+#personal-description{
+  width:50vw;
+  display:flex;
+  align-items: center;
+  padding:10vw
+  
+}
+
 .ES {
-    display: block;
-    /* Default display */
+  display: block;
 }
 
 .EN {
-    display: none;
-    /* Initially hidden */
+  display: none;
 }
-
+/*jobs*/
+#job-container {
+  display: flex;
+  flex-direction: column;
+}
 .accordion {
-    max-width: 600px;
-    margin: 20px auto;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .accordion-item {
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  display: flex;
+}
+.accordion-item.active .accordion-content {
+  display: block;
 }
 
 .accordion-header {
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 20%;
+  min-width: 20%;
 }
 
 .accordion-content {
-    display: none;
-    padding: 10px;
+  display: none;
+  padding: 10px;
 }
-/*
-colors{
-    #171717
-    #444444
-    #DA0037
-    #EDEDED
-*/
+
+.btn{
+  color:var(--clr-silver);
+  background-color:var(--clr-darkgray);
+  border: 2px solid:var(--clr-black);
+  transition: all 0.3s ease 0s;
+}
+.btn:hover{
+  transform:translateY(10px);
+  color:var(--clr-deepred)
+}
+
+
