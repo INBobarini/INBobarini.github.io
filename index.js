@@ -1,23 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const accordionItems = document.querySelectorAll('.accordion-item');
-
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-
-        header.addEventListener('click', function () {
-            // Toggle the display of content when the header is clicked
-            const content = item.querySelector('.accordion-content');
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-
-            // Collapse other open sections (optional)
-            accordionItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.accordion-content').style.display = 'none';
-                }
-            });
-        });
-    });
-});
+function showJob(jobId){
+    let jobContent = document.querySelector(`#${jobId}`)
+    if(!jobContent.style.display){
+        jobContent.style.display = 'block';
+    }
+    else{
+        jobContent.style.display = jobContent.style.display === 'none' ? 'block' : 'none';
+    }
+    let buttonToTurnActive = document.querySelector(`.${jobId}`);
+    if (buttonToTurnActive) {
+        buttonToTurnActive.classList.toggle('active'); // Add or remove the "active" class
+    }
+}
 
 function toggleContent() {
     let ES = document.querySelectorAll('.ES');

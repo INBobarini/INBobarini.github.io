@@ -1,5 +1,7 @@
 :root {
   --clr-silver: #ededed; /*1°*/
+  --clr-chalk: #fefbf6; /*1°*/
+  --clr-folder: #eadfb4; /*1°*/
   --clr-darkgray: #444444; /*2°*/
   --clr-black: #171717; /*2°alt, fonts*/
   --clr-deepred: #da0037; /*3°accent, fonts*/
@@ -33,6 +35,10 @@ body {
   background-color: var(--clr-deepred);
   border: 1px var(--clr-darkgray) solid;
 }
+.folder {
+  background-color: var(--clr-folder);
+  border: 1px var(--clr-darkgray) solid;
+}
 .center {
   margin: 0;
   position: absolute;
@@ -44,7 +50,10 @@ body {
 
 h1 {
   font-size: 5em;
-  font-weight:bold;
+  font-weight: bold;
+}
+.active{
+  color: var(--clr-deepred);
 }
 
 #hero-section {
@@ -71,27 +80,58 @@ h1 {
   display: flex;
   width: 35%;
 }
-#jobs-section{
+#jobs-section {
+}
+
+#job-header {
   display:flex;
-  align-items:middle;
-  justify-content:space-around;
+  justify-content:space-between;
+  align-items:flex-end
+}
+#job-header>div{
+  
   
 }
-#jobs-section > div{
-  width:200px;
-  height:200px;
-}
-#skills-section{
-  
+#left-side-flap{
 
 }
-#skills-section > div{
-  width:500px;
-  height:200px;
-}
-#contact-section{
+#right-side-flaps{
   
 }
-#contact-section>div{
+.flap-sheet {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 5px;
+  background-color: var(--clr-silver);
+  border: 0.5px solid var(--clr-darkgray);
+  font-weight: bold;
+  width:100px;
+  height:20px;
+}
+.flap-folder {
+  width:100px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 30px;
+  background-color: var(--clr-silver);
+  border: 0.5px solid var(--clr-darkgray);
+  color: var(--clr-deepred);
+  font-size: 1.2rem;
+  width:250px;
+  height:30px;
+}
+#job-inti,#job-ingenia,#job-mg,#job-le{
+  background-color: var(--clr-chalk);
+  border:1px solid var(--clr-deepred);
+  display: none;
+}
+
+
+#skills-section {
+}
+#skills-section > div {
   
 }
+#contact-section {
+}
+#contact-section > div {
+}
+
