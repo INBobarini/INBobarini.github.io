@@ -20,6 +20,7 @@
 }
 body {
   box-sizing: border-box;
+  font-size: calc(9px+1vw); //12px(HVGA) to 20px(fHD)
 }
 .lvl1 {
   color: var(--clr-black);
@@ -49,7 +50,7 @@ body {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 2em;
   font-weight: bold;
 }
 .active {
@@ -139,6 +140,7 @@ h1 {
   display: none;
 }
 
+
 #skills-section {
 }
 #skills-section > div {
@@ -147,3 +149,36 @@ h1 {
 }
 #contact-section > div {
 }
+#page{
+  display:grid;
+  grid-template-columns: 45px 260px;
+  grid-template-rows: 45px repeat(7, 18px);
+  column-gap:2px;
+}
+#page>div{
+  border-left: 1px solid var(--clr-deepred);
+  border-right: 1px solid var(--clr-deepred);
+  border-bottom: 0.5px solid var(--clr-darkgray);
+  background-color: var(--clr-chalk);
+  padding-left:4px;
+  padding-bottom:0px;
+}
+
+#page>.left{
+  border-left:0;
+}
+#page>.right{
+  border-right:0;
+}
+
+#page>.top{
+  display:flex;
+  border-top:0;
+  height:100%;
+  align-items:flex-end;
+  background-color: yellow;
+}
+#page>.bottom{
+  border-bottom:0;
+}
+
