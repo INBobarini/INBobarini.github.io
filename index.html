@@ -41,12 +41,10 @@
         </div>
         <div id="jobs-section">
             <div id="job-header">
-                <div id="left-side-flap">
-                    <button class="flap-folder">Work Experience</button>
-                    <i class="bi bi-briefcase"></i>
-                    <i class="bi bi-award"></i>
+                <div id="left-side-flaps">
+                    <button class="flap-binder">Work Experience</button>
                 </div>
-                <div id="space-between-flaps">+++++</div>
+                <div id="space-between-flaps"></div>
                 <div id="right-side-flaps">
                     <button class="flap-sheet job-inti" onclick="showJob('job-inti')">Inti</button>
                     <button class="flap-sheet job-ingenia" onclick="showJob('job-ingenia')">Ingenia</button>
@@ -54,7 +52,7 @@
                     <button class="flap-sheet job-le" onclick="showJob('job-le')">LE</button>
                 </div>
             </div>
-            <div #id="job-content">
+            <div #id="job-content" class="binder-cover">
                 <div id="job-inti">
                     <h3>National Institute of Industrial Technology - (Jul. 2021 – Sep. 2022)</h3>
                     <h4>Quality Management Systems Auditor – Conformity Assessment</h4>
@@ -115,33 +113,7 @@
                 </div>
             </div>
         </div>
-        <div id="skills-section" class="lvl1">
-            <h2>Skills, languages and courses</h2>
-            <div id="test">
-
-            </div>
-            <div id="skills" class="lvl2">
-                <i class="bi bi-gear"></i>Skills:
-                <li>MS Excel: advanced.</li>
-                <li>JS+HTML+CSS: intermediate</li>
-                <li>MS Visio</li>
-                <li>Project</li>
-                <li>PowerBI</li>
-            </div>
-            <div id="languages" class="lvl2">
-                <i class="bi bi-wechat"></i>LANGUAGES
-                <li>Spanish: native.</li>
-                <li>English: domain. (B2: oral, C1: written)</li>
-            </div>
-            <div id="courses" class="lvl2">
-                <i class="bi bi-book"></i>
-                <i class="bi bi-easel"></i>
-                COURSES
-                <li>“Backend Programming” (Coderhouse)</li>
-                <li>“The 5S Philosophy, the basis of all Continuous Improvement” (ECKMA – FCEFyN)</li>
-                <li>“GC-19 Quality Management under ISO/IEC 17025:2017” (IRAM)</li>
-            </div>
-        </div>
+        
         <div id="contact-section">
             <h3>Contact me</h3>
             <form action="" class="form">
@@ -156,28 +128,49 @@
                 <button class="lvl3" type="submit">Submit</button>
             </form>
         </div>
-        <div id="page">
-            <div class="left top"></div>
-            <div class=" right top "><div><h3>Hhello worlder</h3></div></div>
-            <div class="left"></div>
-            <div class="right">hello world1</div>
-            <div class="left"></div>
-            <div class="right">what happe</div>
-            <div class="left"></div>
-            <div class="right">nne LETS GO</div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="left bottom"></div>
-            <div class="right bottom"></div>
+        
+        <div class="sheet-page">
+            <div class="first-row">
+                <h2>SKILLS, LANGUAGES AND COURSES</h2>
+            </div>
+            <div class="split-row">
+                <div class="first-column w-half">
+                    <h3>Skills: </h3>
+                </div>
+                <div class="last-column w-half">
+                    <h3>Languages: </h3>
+                </div>
+            </div>
+            <div class="split-row">
+                <div class="first-column w-quarter">
+                    MS Excel: advanced.
+                </div>
+                <div class="column w-quarter">
+                    JS+HTML+CSS: intermediate
+                </div>
+                <div class="last-column w-quarter">Spanish: native</div>
+            </div>
+            <div class="row">
+                <div class="first-column w-half">Microsoft Project</div>
+                <div class="last-column w-half">English: advanced</div>
+            </div>
+            <div class="row">Microsoft Visio</div>
+            <div class="row">Microsoft PowerBI</div>
+            <div class="row"></div>
+            <div class="row">
+                <h3>Courses</h3>
+            </div>
+            <div class="row">“Backend Programming” (Coderhouse)</div>
+            <div class="row">“The 5S Philosophy, the basis of all Continuous Improvement” (ECKMA – FCEFyN)”</div>
+            <div class="row">“GC-19 Quality Management under ISO/IEC 17025:2017” (IRAM)</div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
         </div>
-
-
     </div>
-
+    <i class="bi bi-briefcase"></i>
+    <i class="bi bi-award"></i>
 </body>
 
 </html>
