@@ -96,10 +96,6 @@ function createBinderSheet(job,flapOrder){
     }    
     //add an onclick function that changes the z axix of the clicked element 
     let sheetHtml=`
-        
-            <div class="zero-row flap${flapOrder}">
-                <button class='job-flap' onclick='bringToTop("${job}")'>${job}</button>
-            </div>
             <div class="first-row">
                 <h2 id="title"></h2>
             </div>
@@ -139,17 +135,24 @@ function createBinderSheet(job,flapOrder){
 let zIndexes = {
     'binder-cover':5,
     'INTI':4,
+    'flap-INTI':5,
     'INGENIA':3,
+    'flap-INGENIA':4,
     'MG':2,
+    'flap-MG':3,
     'LE':1,
+    'flap-LE':2,
+
 }
 
 function setZindexes(){ 
     Object.keys(zIndexes).forEach((id, i) => {
         
         let prop = document.querySelector(`#${id}`)
+        
         prop.style.zIndex = zIndexes[id]
     });
+    console.log(zIndexes)
 }
 
 createBinderSheet('INTI', 1)
@@ -167,8 +170,10 @@ function bringToTop(id) {
         return
     }
     else{
-        console.log({highestId})
-        zIndexes[id]=1+zIndexes[highestId]
+        zIndexes[id] = 1+zIndexes[highestId]
+        if(zIndexes[`flap-${id}`]){
+            zIndexes[`flap-${id}`] = 2+zIndexes[highestId]
+        }
     }
     setZindexes()
 }

@@ -71,13 +71,13 @@ h1 {
   display: flex;
   width: 35%;
 }
-#jobs-section {
-}
 
 #binder-flaps {
   display: flex;
   justify-content: space-between;
   width: 62.5rem;
+  height: 2rem;
+  
 }
 #left-side-flaps{
   display: flex;
@@ -85,8 +85,14 @@ h1 {
 }
 #space-between-flaps {
   display: flex;
-  width: max(0px, 80%);
+  width: max(0px, 40%);
   border-bottom: 2px solid var(--clr-darkgray);
+}
+#job-flaps{
+  width: max(240px, 40%);
+  display:grid;
+  grid-template-columns: repeat(4,5rem);
+  grid-column-gap: 1rem;
 }
 
 .flap-binder {
@@ -99,7 +105,7 @@ h1 {
   font-weight: bold;
   font-size: 20px;
   width: max(160px, 100%);
-  height: 30px;
+  height: 2rem;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -135,33 +141,10 @@ h1 {
   bottom: 0rem;
 }
 
-#job-inti,
-#job-ingenia,
-#job-mg,
-#job-le {
-  background-color: var(--clr-silver);
-  border-bottom: 1px solid var(--clr-black);
-  border-left: 1px solid var(--clr-black);
-  border-right: 1px solid var(--clr-black);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  display: none;
-  height: 34rem;
-}
-
-#skills-section {
-}
-#skills-section > div {
-}
-#contact-section {
-}
-#contact-section > div {
-}
-
 .sheet-page {
   width: 61rem;
   display: grid;
-  grid-template-rows: 2rem 6.25rem repeat(13, 1.875em) 3.125em;//
+  grid-template-rows: 6.25rem repeat(13, 1.875em) 3.125em;//
   border-bottom: 2px solid var(--clr-black);
   position: relative;
 }
@@ -174,6 +157,7 @@ h1 {
  }
  
  .job-flap{
+  position:relative;
   width:5rem;
   height:4rem;
   display: flex; 
@@ -186,6 +170,7 @@ h1 {
   color:var(--clr-chalk);
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
+  zIndex:999;
  }
  
 .first-row {
@@ -254,23 +239,28 @@ h1 {
 .flap4{
   width: 95%;
 }
-.position-relative-1{
+.position-relative-0{
   position:relative; 
   left: 0rem;
-  bottom: 36rem;
+  bottom: 0rem;
+ }
+.position-relative-1{
+  position:relative; 
+  left: 0.25rem;
+  bottom: 34rem;
  }
  .position-relative-2{
   position:relative; 
   left: 0.5rem;
-  bottom: 71.8rem; //sheet grid-columns height + 2em(jobflap)
+  bottom: 67.75rem; //sheet grid-columns height + 2em(jobflap)
  }
  .position-relative-3{
   position:relative; 
-  left: 1rem;
-  bottom: 107.5rem; 
+  left: 0.75rem;
+  bottom: 101.5rem; 
  }
  .position-relative-4{
   position:relative; 
   left: 1rem;
-  bottom: 143.25rem;
+  bottom: 135.25rem;
  }
