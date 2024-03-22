@@ -152,7 +152,6 @@ function setZindexes(){
         
         prop.style.zIndex = zIndexes[id]
     });
-    console.log(zIndexes)
 }
 
 createBinderSheet('INTI', 1)
@@ -177,3 +176,58 @@ function bringToTop(id) {
     }
     setZindexes()
 }
+function typeInScreen(className, str, startTime, duration, type, del, last){//time in seconds
+    let container = document.querySelector(`#${className}`)
+    let textElement = document.createElement('div')
+    textElement.classList.add('screen-text')
+    textElement.style.width = `${str.length}ch`
+    textElement.style.display = 'none'
+    textElement.textContent = str
+    container.appendChild(textElement)
+    
+    if(type){
+        setTimeout(()=>{
+            textElement.style.display = "inline-block"
+            textElement.style.animation = `typing ${duration}s steps(${str.length}), blink 0.5s step-end infinite alternate` 
+        },(startTime)*1000)
+    }
+    if(type&&del){
+        setTimeout(()=>{
+            textElement.style.display = "inline-block"
+            textElement.style.animation = `typing ${duration*0.66}s steps(${str.length}), blink 0.5s step-end infinite alternate` 
+        },(startTime)*1000)
+        setTimeout(()=>{
+            textElement.style.animation = `deleting ${duration*(0.33)}s steps(${str.length}), blink 0.5s step-end infinite alternate` 
+        },(startTime+duration*(0.66))*1000)
+        setTimeout(()=>{
+            textElement.remove()
+            
+        },(startTime+duration*0.98)*1000)
+    }
+    
+    if (!last){
+        setTimeout(()=>{
+            textElement.style.border += 0
+        },(startTime+duration)*1000)
+    }
+}
+
+typeInScreen("monitor-screen","I dispel uncertainty.", 1, 2,"type")
+typeInScreen("monitor-screen","You add value.", 3, 3,"type","delete")
+typeInScreen("monitor-screen","You innovate.", 6, 2,"type",'',true)
+
+
+/*
+typing functions
+type and continue
+type and stay
+type and delete
+timeouts trigger classes or display properties
+[string]    [id]    [time]  [style:value] 
+            text1   0s     (startanimating)          
+            text2   0s      display:none;   
+            text1   2s        border:0
+            text2   2s  display:inline-block; 
+            text2   3s     (startdeleting)
+            text3   4s      (starttyping) 
+*/
