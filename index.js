@@ -179,20 +179,21 @@ function bringToTop(id) {
 function typeInScreen(className, str, startTime, duration, type, del, last){//time in seconds
     let container = document.querySelector(`#${className}`)
     let textElement = document.createElement('div')
-    textElement.classList.add('screen-text')
+    textElement.classList.add('card-text-animated')
     textElement.style.width = `${str.length}ch`
-    textElement.style.display = 'none'
-    textElement.textContent = str
+    textElement.textContent = ''
     container.appendChild(textElement)
     
     if(type){
         setTimeout(()=>{
+            textElement.textContent = str
             textElement.style.display = "inline-block"
             textElement.style.animation = `typing ${duration}s steps(${str.length}), blink 0.5s step-end infinite alternate` 
         },(startTime)*1000)
     }
     if(type&&del){
         setTimeout(()=>{
+            textElement.textContent = str
             textElement.style.display = "inline-block"
             textElement.style.animation = `typing ${duration*0.66}s steps(${str.length}), blink 0.5s step-end infinite alternate` 
         },(startTime)*1000)
@@ -207,21 +208,18 @@ function typeInScreen(className, str, startTime, duration, type, del, last){//ti
     
     if (!last){
         setTimeout(()=>{
-            textElement.style.border += 0
+            
         },(startTime+duration)*1000)
     }
 }
 
-typeInScreen("monitor-screen","I dispel uncertainty.", 1, 2,"type")
-typeInScreen("monitor-screen","You add value.", 3, 3,"type","delete")
-typeInScreen("monitor-screen","You innovate.", 6, 2,"type",'',true)
+typeInScreen("card-footer","I dispel uncertainty. You add value. ", 0, 3,"type")
+
+
 
 
 /*
 typing functions
-type and continue
-type and stay
-type and delete
 timeouts trigger classes or display properties
 [string]    [id]    [time]  [style:value] 
             text1   0s     (startanimating)          
@@ -230,4 +228,59 @@ timeouts trigger classes or display properties
             text2   2s  display:inline-block; 
             text2   3s     (startdeleting)
             text3   4s      (starttyping) 
+*/
+
+// Old monitor from https://www.youtube.com/watch?v=q9wRjIPo8Rw
+/*
+const powerLed = document.querySelector(".power-led");
+const powerButton = document.querySelector(".power-switch .button");
+const eyes = document.querySelector(".eyes");
+const screen = document.querySelector(".screen");
+
+const timers = [];
+
+powerButton.addEventListener("click", () => {
+  powerLed.classList.toggle("on");
+
+  if (powerLed.classList.contains("on")) {
+    timers.splice(0);
+    screen.classList.remove("off");
+    startTyping(["cd manz.dev", "npm install", "npm run dev"]);
+  } else {
+    eyes.classList.add("off");
+    screen.innerHTML = "";
+    timers.forEach(timer => clearTimeout(timer));
+    timers.splice(0);
+  }
+});
+
+const startTyping = (texts) => {
+  let wait = 750;
+
+  screen.innerHTML = "$ ";
+  texts.forEach(text => {
+    wait += 750;
+    for (let i = 0; i < text.length; i++) {
+      const timer = setTimeout(() => {
+        screen.innerHTML += text[i];
+      }, wait);
+      timers.push(timer);
+      wait += 50 + ~~(Math.random() * 50);
+    }
+
+    wait += 750;
+
+    const timer = setTimeout(() => (screen.innerHTML += "<br>$ "), wait);
+    timers.push(timer);
+  });
+
+  wait += 500;
+
+  const timer = setTimeout(() => {
+    const timer = setTimeout(() => eyes.classList.remove("off"), 500);
+    timers.push(timer);
+    screen.classList.add("off");
+  }, wait);
+  timers.push(timer);
+};
 */

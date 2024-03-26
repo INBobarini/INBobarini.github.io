@@ -19,11 +19,34 @@
 
 <body>
     <div class="container">
-        <div id="monitor" class="">
-            <div id="monitor-screen">
-                <div id="screen">
-                </div>
+        <svg width="200" height="250" version="1.1">
+            <rect x="60" y="10" rx="10" ry="10" width="30" height="30" stroke="black" fill="transparent" stroke-width="5"/>
+            <polygon points="0 0, 100 0, 100 100, "/>
+        </svg>
+        <div id="card">
+            <div id="card-header">
+                <div>inbobarini@gmail.com</div>
+                <div> +54 351 5433-413</div>
             </div>
+            <div id="card-body">
+                Iván Bobarini
+                <br>
+                Ingeniero Industrial
+            </div>
+            <div id="card-footer">
+
+            </div>
+        </div>
+        <div id="personal-id">
+            <div class="bg-id-upper">
+                <img class="personal-picture" src="/static/IBp.jpg">
+
+            </div>
+            
+            <div class="bg-id-lower">
+
+            </div>
+
         </div>
         <div id="academic-education">
             <i class="bi bi-text-center"></i>
@@ -36,24 +59,24 @@
                 <div id="left-side-flaps">
                     <button class="flap-binder" onclick="bringToTop('binder-cover')">
                         <div class="name-label">Iván N. Bobarini</div>
-                    </button> 
+                    </button>
                 </div>
                 <div id="space-between-flaps"></div>
                 <div id="job-flaps">
                     <button class='job-flap' id="flap-INTI" onclick='bringToTop("INTI")''>INTI</button>
-                    <button class='job-flap' id="flap-INGENIA" onclick='bringToTop("INGENIA")'>INGENIA</button>
+                    <button class=' job-flap' id="flap-INGENIA" onclick='bringToTop("INGENIA")'>INGENIA</button>
                     <button class='job-flap' id="flap-MG" onclick='bringToTop("MG")'>MG</button>
                     <button class='job-flap' id="flap-LE" onclick='bringToTop("LE")'>LE</button>
                 </div>
             </div>
             <div id="binder" class="binder ">
                 <div id="binder-cover" class="binder-cover position-relative-0">
-                    
-                </div> 
-                
+
+                </div>
+
             </div>
         </div>
-        
+
         <div id="contact-section">
             <h3>Contact me</h3>
             <form action="" class="form">
@@ -70,7 +93,7 @@
         </div>
         <div class="sheet-page">
             <div class="zero-row">
-                
+
             </div>
             <div class="first-row">
                 <h2>SKILLS, LANGUAGES AND COURSES</h2>
@@ -115,4 +138,5 @@
     <i class="bi bi-award"></i>
 </body>
 <script src="/index.js"></script>
+
 </html>
