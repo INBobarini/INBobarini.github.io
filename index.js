@@ -213,6 +213,43 @@ function typeInScreen(className, str, startTime, duration, type, del, last){//ti
     }
 }
 
+function randomizePolygons(canvasId,canvasW, canvasH, n, points){
+    let canvas = document.querySelector(`#${canvasId}`)
+    let polygonsGenerated = 0;
+    function rndNum(max){
+        return Math.floor(Math.random() * max)
+    }
+    function generatePoints(points, maxX, maxY) {
+        let str = '';
+        for (let p = 0; p < points; p++) {
+            if(polygonsGenerated%2){
+                str += 
+                p === 0 ? 0 + " " + 0 + ", " :
+                p === 1 ? 0 + " " + maxY + ", " :
+                p === 2 ? maxX + " " + rndNum(maxY) : 
+                '' 
+            }
+            else{
+                str += 
+                p === 0 ? maxX + " " + 0 + ", " :
+                p === 1 ? maxX + " " + maxY + ", " :
+                p === 2 ? 0 + " " + rndNum(maxY) : 
+                '' 
+            }              
+        }
+        console.log(str);
+        polygonsGenerated++
+        return str;
+    }
+    for(let i=0;i<n;i++){
+        let polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon")
+        let color = polygonsGenerated%2? "red":"gray"
+        polygon.id="polygon-" + color
+        polygon.setAttribute("points", generatePoints(points, canvasW, canvasH))
+        canvas.appendChild(polygon)
+    }       
+}   
+randomizePolygons("id-triangles-bg",270,128,3,3)
 typeInScreen("card-footer","I dispel uncertainty. You add value. ", 0, 3,"type")
 
 

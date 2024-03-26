@@ -88,8 +88,9 @@ h1 {
 #card {
   display: grid;
   background-image: url("/white-paper-background.jpg");
-  background-size: cover; /* or contain, or specific dimensions */
-  background-position: center; /* or other positioning */
+  background-size: 200px 200px;
+  background-position: center;
+  background-repeat: repeat;
   width: 350px;
   height: 200px;
   border: 1px solid var(--clr-darkgray);
@@ -98,8 +99,7 @@ h1 {
 }
 #card * {
   font-family: monospace;
-  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2),
-  0px -2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2), 0px -2px 2px rgba(0, 0, 0, 0.1);
 }
 #card-header {
   display: flex;
@@ -120,7 +120,7 @@ h1 {
   display: grid;
   height: 40px;
   padding-top: 20px;
-  padding: 20px 22px 0px 22px;//adjust left and right depending on the text being typed in the card
+  padding: 20px 22px 0px 22px; //adjust left and right depending on the text being typed in the card
 }
 
 .card-text-animated {
@@ -129,32 +129,41 @@ h1 {
   overflow: hidden;
   font-family: monospace;
 }
-#personal-id{
-  width: 242px;
-  height: 152px;
-  border: 3px solid var(--clr-darkgray);
+#personal-id {
+  width: 270px;
+  height: 427px;
+  border: 5px solid var(--clr-darkgray);
 }
-.bg-id-upper{
-  display:flex;
-  justify-content:center;
-  height:35%;
-  width:100%;
-  background-image:gradient;
+.bg-id-upper {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+  background-color: var(--clr-chalk);
 }
-.bg-id-lower{
-  height:65%;
-  width:100%;
-  background-color:blue;
+.bg-id-lower {
+  height: 70%;
+  width: 100%;
+  background-color: var(--clr-chalk);
 }
-.personal-picture{
-  position:relative;
-  top:55px;
-  height:130px;
-  width:130px;
-  border-radius:50%;
+.personal-picture {
+  position: relative;
+  left: 0;
+  top: 55px;
+  height: auto;
+  width: 60%;
+  border-radius: 50%;
   border: 5px solid var(--clr-darkgray);
 }
 
+#polygon-red {
+  fill: var(--clr-deepred);
+  opacity: 0.25;
+}
+#polygon-gray {
+  fill: var(--clr-darkgray);
+  opacity: 0.25;
+}
 
 @keyframes blink {
   50% {
