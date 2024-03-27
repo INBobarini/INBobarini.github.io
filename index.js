@@ -344,28 +344,45 @@ let layout = {
 }
   
 //Plotly.newPlot("myDiv", data, layout)
-function drawCompetencesChart(divId,competences){
+function drawCompetencesChart(divId,discipline){
+    let labels = ['Auditoría',
+        'Detección de PNC', 
+        'Diseño de SGC',
+        'Analisis de indicadores',
+        'Interpretación de estándares y planos',
+        'Planificación de acciones'
+    ]
     let data = [
         {
         type: 'scatterpolar',
-        r: competences.values,
-        theta: competences.labels,
+        r: Object.values(discipline.competences),
+        theta: labels,
         fill: 'toself',
-        name: 'Auto-evaluados'
+        name: 'Auto-evaluados',
+        fillcolor: 'rgba(218, 0, 55, 0.5)',
+        line: {
+            color: 'rgba(218, 0, 55, 0.5)', // Dark gray border color
+            width: 2 // Border width
+        }
         },
         {
         type: 'scatterpolar',
-        r: competences.requirements,
-        theta: competences.labels,
+        r: Object.values(discipline.requirements),
+        theta: labels,
         fill: 'toself',
-        name: 'Requeridos'
+        name: 'Requeridos',
+        fillcolor: 'rgba(68, 68, 68, 0.5)',
+        line: {
+            color: 'rgba(68, 68, 68, 0.5)', // Dark gray border color
+            width: 2 // Border width
+        }
         }
     ]
     let layout = {
         polar: {
           radialaxis: {
             visible: true,
-            range: [0, 5]
+            range: [0, 10]
           }
         },
         width: 700, 
@@ -377,17 +394,20 @@ function drawCompetencesChart(divId,competences){
 
     Plotly.newPlot(divId, data, layout)
 }
-let competences = {}
-competences.qualityManagement = {
-    labels:[
-        'Auditoría',
-        'Detección de PNC', 
-        'Diseño de SGC',
-        'Analisis de indicadores',
-        'Interpretación de estándares y planos',
-        'Planificación de acciones'
-    ],
-    values:[4,3,4,3,4,4],
-    requirements:[3,4,2,4,5,2]
+
+class Score {
+    constructor(auditoria, deteccionPNC, disenoSGC, analisisIndicadores, interpretacionEst, planificacionAcciones) {
+        this.auditoria = auditoria;
+        this.deteccionPNC = deteccionPNC;
+        this.disenoSGC = disenoSGC;
+        this.analisisIndicadores = analisisIndicadores;
+        this.interpretacionEst = interpretacionEst;
+        this.planificacionAcciones = planificacionAcciones;
+    }
 }
-drawCompetencesChart("myDiv", competences.qualityManagement)
+
+let qualityManagement = {}
+qualityManagement.competences = new Score(8, 6, 9, 8, 7, 8)
+qualityManagement.requirements = new Score(7, 7, 8, 8, 6, 7)
+
+drawCompetencesChart("myDiv", qualityManagement)
