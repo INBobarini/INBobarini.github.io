@@ -249,7 +249,7 @@ function randomizePolygons(canvasId,canvasW, canvasH, n, points){
         canvas.appendChild(polygon)
     }       
 }   
-randomizePolygons("id-triangles-bg",270,128,3,3)
+//randomizePolygons("id-triangles-bg",348,27,4,3)
 typeInScreen("card-footer","I dispel uncertainty. You add value. ", 0, 3,"type")
 
 
@@ -321,3 +321,73 @@ const startTyping = (texts) => {
   timers.push(timer);
 };
 */
+
+let data = [{
+    type: 'scatterpolar',
+    r: [39, 28, 8, 7, 28, 39],
+    theta: ['A','B','C', 'D', 'E', 'A'],
+    fill: 'toself'
+}]
+  
+let layout = {
+    polar: {
+      radialaxis: {
+        visible: true,
+        range: [0, 50]
+      }
+    },
+    width: 700, 
+    height: 450,
+    
+    plot_bgcolor: 'rgba(0,0,0,0)', // Transparent plot background
+    paper_bgcolor: 'rgba(0,0,0,0)' // Transparent paper background
+}
+  
+//Plotly.newPlot("myDiv", data, layout)
+function drawCompetencesChart(divId,competences){
+    let data = [
+        {
+        type: 'scatterpolar',
+        r: competences.values,
+        theta: competences.labels,
+        fill: 'toself',
+        name: 'Auto-evaluados'
+        },
+        {
+        type: 'scatterpolar',
+        r: competences.requirements,
+        theta: competences.labels,
+        fill: 'toself',
+        name: 'Requeridos'
+        }
+    ]
+    let layout = {
+        polar: {
+          radialaxis: {
+            visible: true,
+            range: [0, 5]
+          }
+        },
+        width: 700, 
+        height: 450,
+        
+        plot_bgcolor: 'rgba(0,0,0,0)', 
+        paper_bgcolor: 'rgba(0,0,0,0)' 
+    }
+
+    Plotly.newPlot(divId, data, layout)
+}
+let competences = {}
+competences.qualityManagement = {
+    labels:[
+        'Auditoría',
+        'Detección de PNC', 
+        'Diseño de SGC',
+        'Analisis de indicadores',
+        'Interpretación de estándares y planos',
+        'Planificación de acciones'
+    ],
+    values:[4,3,4,3,4,4],
+    requirements:[3,4,2,4,5,2]
+}
+drawCompetencesChart("myDiv", competences.qualityManagement)

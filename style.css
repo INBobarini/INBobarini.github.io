@@ -23,6 +23,7 @@ body {
   box-sizing: border-box;
   font-size: calc(9px+1vw);
 }
+
 html {
   font-size: calc(9px+1vw); //12px(HVGA) to 20px(fHD)
 }
@@ -130,30 +131,47 @@ h1 {
   font-family: monospace;
 }
 #personal-id {
-  width: 270px;
-  height: 427px;
-  border: 5px solid var(--clr-darkgray);
+  display:flex;
+  flex-direction:column;
+  width: 350px;
+  height: 200px;
+  border: 2px solid var(--clr-darkgray);
+  border-radius: 5px;
 }
 .bg-id-upper {
-  display: flex;
-  justify-content: center;
-  height: 30%;
+  border-top: 1px solid var(--clr-darkgray);
+  height: 15%;
   width: 100%;
-  background-color: var(--clr-chalk);
+  background-color: var(--clr-deepred);
+  color:var(--clr-chalk);
+  padding:2px;
 }
-.bg-id-lower {
-  height: 70%;
+.bg-id-upper *{
+  text-align:center;
+}
+.bg-id-body{
+  display:flex;
+  align-items:center;
+  height: 75%;
+  gap: 10px;
+  margin-left:5px;
+  margin-right:5px;
+}
+.profile-img {
+  max-height:88px;
+}
+.id-data{
+  font-size:14px;
+  border: 1px dotted red;
+}
+.bg-id-lower{
+  height: 10%;
   width: 100%;
-  background-color: var(--clr-chalk);
+  background-color: var(--clr-deepred);
 }
-.personal-picture {
-  position: relative;
-  left: 0;
-  top: 55px;
-  height: auto;
-  width: 60%;
-  border-radius: 50%;
-  border: 5px solid var(--clr-darkgray);
+#id-triangles-bg {
+  width: 100%; 
+  height: 100%;
 }
 
 #polygon-red {
@@ -163,6 +181,32 @@ h1 {
 #polygon-gray {
   fill: var(--clr-darkgray);
   opacity: 0.25;
+}
+#a4-page{
+  width: 621px;
+  height:876px;
+  border:1px solid black;
+  
+}
+#a4-page *{
+  padding-left:10%;
+  padding-right:10%;
+}
+.page-header{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height:12%;
+}
+.page-body{
+  height:85%;
+  position:relative;
+  left:-220px;
+  top:310px;
+  text-align:justify;
+}
+.page-footer{
+  height:3%;
+  text-align:justify;
 }
 
 @keyframes blink {
