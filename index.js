@@ -411,3 +411,17 @@ qualityManagement.competences = new Score(8, 6, 9, 8, 7, 8)
 qualityManagement.requirements = new Score(7, 7, 8, 8, 6, 7)
 
 drawCompetencesChart("myDiv", qualityManagement)
+
+const activeLinks = [
+    {'dely4nu':"induplast"},
+    {'kely3fi':"sancor"}
+]
+
+
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+
+
+console.log(jobOffersData)
