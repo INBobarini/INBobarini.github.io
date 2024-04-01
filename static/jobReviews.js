@@ -122,7 +122,6 @@ function drawCompetencesChart(divId,selfEval,evalJobArr){
     let jobValues = Object.values(jobResult)
     let labels = jobKeys.map(k=>multiLineString(competence.GC[k].name,10))
     let selfValues = jobKeys.map(k=>selfEval[k])
-    console.log(jobKeys)
     let data = [
         {
             type: 'scatterpolar',
@@ -177,7 +176,7 @@ function drawCompetencesChart(divId,selfEval,evalJobArr){
 class JobOffer{
     constructor(title,company, reqs, resps, benef){
         this.title = title;
-        this.company = company;git
+        this.company = company;
         this.requirements = reqs;
         this.responsibilities = resps;
         this.benefits = benef;

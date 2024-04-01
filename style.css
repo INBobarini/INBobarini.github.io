@@ -226,7 +226,6 @@ li {
   font-size:0.8rem;
   display:flex;
   align-items:center;
-  flex-gap:2px;
 }
 .description{
   max-width:85%;
@@ -381,14 +380,14 @@ li {
 	justify-content: flex-start;
 	align-items: center;
 	padding-top: 0.4rem;
-	zindex: 50;
+	z-index: 50;
 	background-color: var(
 		--clr-deepred
 	);
 	color: var(--clr-chalk);
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
-	zindex: 999;
+	z-index: 999;
 }
 
 .first-row {
