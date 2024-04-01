@@ -153,6 +153,12 @@ function setZindexes(){
         prop.style.zIndex = zIndexes[id]
     });
 }
+function createA4Page(){
+    let container = document.querySelector("."+"container")
+    let div = document.createElement(div)
+    div.classList.add
+}
+
 
 createBinderSheet('INTI', 1)
 createBinderSheet('INGENIA', 2)
