@@ -184,7 +184,7 @@ li {
   max-width:21cm;
   max-height: 29.7cm;
 	width: 21cm;
-	
+	height:29.7cm;
 	border: 1px solid black;
 	padding-left: 3%;
 	padding-right: 3%;
@@ -314,7 +314,7 @@ li {
 	bottom: 0rem;
 }
 
-.sheet-page {
+.sheet-page, .skills-sheet {
 	width: 61rem;
 	display: grid;
 	grid-template-rows:
@@ -344,14 +344,14 @@ li {
 	justify-content: flex-start;
 	align-items: center;
 	padding-top: 0.4rem;
-	z-index: 50;
+	
 	background-color: var(
 		--clr-deepred
 	);
 	color: var(--clr-chalk);
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
-	z-index: 999;
+	
 }
 
 .first-row {

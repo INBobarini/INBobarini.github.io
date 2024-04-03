@@ -13,7 +13,9 @@ let zIndexes = {
 
 function setZindexes(){
     Object.keys(zIndexes).forEach((id, i) => {
+        
         let prop = document.querySelector(`#${id}`)
+        if(!prop.style){console.log("no prop for id= " + id)}
         prop.style.zIndex = zIndexes[id]
     });
 }
@@ -59,11 +61,13 @@ function setZIndexesListenersAndRotate(id){
             //random rotation from -3 to 3 degrees
             let rotation = Math.floor(Math.random() * 3) - 1
             element.style.transform = `rotate(${rotation}deg)`
-            console.log(element.style.zIndex)
+            
         });
     });
     
 }
-setZIndexesListenersAndRotate()
+//setZIndexesListenersAndRotate()
+setZindexes()
+
 
 

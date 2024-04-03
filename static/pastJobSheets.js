@@ -135,3 +135,34 @@ createBinderSheet('INTI', 1)
 createBinderSheet('INGENIA', 2)
 createBinderSheet('MG', 3)
 createBinderSheet('LE', 4)
+
+function createSkillsSheet(){
+    let sheetContainer = document.createElement('div');
+    sheetContainer.classList.add("skills-sheet");
+    //sheetContainer.classList.add(`position-relative-${flapOrder}`);
+    let sheetHtml=`
+            <div class="first-row">
+                <h2 id="title"></h2>
+            </div>
+            <div class="row">
+                <h3 id="subTitle"> </h3>
+            </div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="row empty-line"></div>
+            <div class="last-row empty-line"></div>
+        `
+        sheetContainer.innerHTML = sheetHtml
+        document.querySelector('.container').appendChild(sheetContainer);
+}
+createSkillsSheet()
+//title, subtitles, content
