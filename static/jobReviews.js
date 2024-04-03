@@ -215,6 +215,7 @@ class JobOffer{
     constructor(title,company, reqs, resps, benef){
         this.title = title;
         this.company = company;
+        this.company = company;
         this.requirements = reqs;
         this.responsibilities = resps;
         this.benefits = benef;
