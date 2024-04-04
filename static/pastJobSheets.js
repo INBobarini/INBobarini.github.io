@@ -136,7 +136,7 @@ createBinderSheet('INGENIA', 2)
 createBinderSheet('MG', 3)
 createBinderSheet('LE', 4)
 
-function createSkillsSheet(){
+function createSkillsSheet(obj){
     let sheetContainer = document.createElement('div');
     sheetContainer.classList.add("skills-sheet");
     //sheetContainer.classList.add(`position-relative-${flapOrder}`);
@@ -144,8 +144,7 @@ function createSkillsSheet(){
             <div class="first-row">
                 <h2 id="title"></h2>
             </div>
-            <div class="row">
-                <h3 id="subTitle"> </h3>
+            <div class="row empty-line">
             </div>
             <div class="row empty-line"></div>
             <div class="row empty-line"></div>
@@ -163,6 +162,29 @@ function createSkillsSheet(){
         `
         sheetContainer.innerHTML = sheetHtml
         document.querySelector('.container').appendChild(sheetContainer);
+        let firstRow = sheetContainer.querySelector(".first-row")
+        let title = Object.keys(contentObj)[0]
+        firstRow.innerHTML = "<h1>"+title+"</h1>"
+        let subtitles = Object.keys(contentObj[title])
+        let lines = []
+        for (let s=0;s<subtitles.length;s++){
+            let line = `<h2>${subtitles[s]}</h2>`
+            lines.push(line)
+            contentObj[title][subtitles[s]].forEach(l=>{
+                lines.push(l)
+            })
+        }
+        let emptyLines = sheetContainer.querySelectorAll(".empty-line")
+        if(lines.length>emptyLines.length) console.log("not enough empty lines")
+        else{lines.forEach((line,i)=>emptyLines[i].innerHTML=line)}
+        
 }
-createSkillsSheet()
-//title, subtitles, content
+let contentObj = {
+    "Habilidades, idiomas y cursos":{
+        "Habilidades":["Hab1","Hab2"],
+        "Idiomas":["Idioma 1"],
+        "Cursos":["C1","C2","C3"]
+    }
+}
+createSkillsSheet(contentObj)
+//title, subtitles, content 
