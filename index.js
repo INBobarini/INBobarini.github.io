@@ -1,6 +1,8 @@
 
 let zIndexes = {
-    'binder-cover':5,
+    'binder-cover':7,
+    'skills-sheet':6,
+    'flap-skills-sheet':5,
     'INTI':4,
     'flap-INTI':5,
     'INGENIA':3,
@@ -13,19 +15,14 @@ let zIndexes = {
 
 function setZindexes(){
     Object.keys(zIndexes).forEach((id, i) => {
-        
+        console.log()
         let prop = document.querySelector(`#${id}`)
-        if(!prop.style){console.log("no prop for id= " + id)}
-        prop.style.zIndex = zIndexes[id]
+        if(!prop){console.error("no prop for id= " + id)}
+        else{prop.style.zIndex = zIndexes[id]}
     });
 }
 
-function createA4Page(){
-    let container = document.querySelector(".container")
-    let div = document.createElement("div")
-    div.classList.add("a4-page")
-    container.appendChild(div)
-}
+
 
 function bringToTop(id) {
     const highestId = Object.keys(zIndexes).reduce((a, b) => 

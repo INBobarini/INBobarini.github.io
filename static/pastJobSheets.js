@@ -139,7 +139,8 @@ createBinderSheet('LE', 4)
 function createSkillsSheet(obj){
     let sheetContainer = document.createElement('div');
     sheetContainer.classList.add("skills-sheet");
-    //sheetContainer.classList.add(`position-relative-${flapOrder}`);
+    sheetContainer.id = "skills-sheet"
+    
     let sheetHtml=`
             <div class="first-row">
                 <h2 id="title"></h2>
@@ -161,30 +162,41 @@ function createSkillsSheet(obj){
             <div class="last-row empty-line"></div>
         `
         sheetContainer.innerHTML = sheetHtml
-        document.querySelector('.container').appendChild(sheetContainer);
+        document.querySelector('#binder').appendChild(sheetContainer);
         let firstRow = sheetContainer.querySelector(".first-row")
-        let title = Object.keys(contentObj)[0]
-        firstRow.innerHTML = "<h1>"+title+"</h1>"
-        let subtitles = Object.keys(contentObj[title])
+        let title = Object.keys(obj)[0]
+        firstRow.innerHTML = "<h2>"+title+"</h2>"
+        let subtitles = Object.keys(obj[title])
         let lines = []
         for (let s=0;s<subtitles.length;s++){
-            let line = `<h2>${subtitles[s]}</h2>`
+            let line = `<h3>${subtitles[s]}</h3>`
             lines.push(line)
-            contentObj[title][subtitles[s]].forEach(l=>{
+            obj[title][subtitles[s]].forEach(l=>{
                 lines.push(l)
             })
         }
         let emptyLines = sheetContainer.querySelectorAll(".empty-line")
         if(lines.length>emptyLines.length) console.log("not enough empty lines")
         else{lines.forEach((line,i)=>emptyLines[i].innerHTML=line)}
+        sheetContainer.classList.add("sheet-page");
+        sheetContainer.classList.add(`position-relative-5`);
         
 }
-let contentObj = {
-    "Habilidades, idiomas y cursos":{
-        "Habilidades":["Hab1","Hab2"],
-        "Idiomas":["Idioma 1"],
-        "Cursos":["C1","C2","C3"]
+let knowledge = {
+    "Formación, habilidades, idiomas y cursos":{
+        "Formación": [
+            "Ingeniería Industrial. Universidad Nacional de Córdoba - FCEFyN (2023-2009) "
+        ],
+        "Uso de herramientas informáticas":[
+            "Microsoft Excel: avanzado. Microsoft PowerBI: intermedio.",
+            "Programación: Javascript(avanzado). HTML(intermedio). CSS(intermedio). Svelte(principiante). SQL: intermedio"
+        ],
+        "Idiomas":["Ingles: avanzado (proficiencia escrita: C1, oral: B2). Español: Nativo."],
+        "Cursos":[
+            "Programación Backend (Coderhouse)",
+            "GC-19 Gestión de la Calidad bajo ISO/IEC 17025:2017",
+            "“La Filosofía 5S, base de toda Mejora Continua” (ECKMA – FCEFyN)"
+        ]
     }
 }
-createSkillsSheet(contentObj)
-//title, subtitles, content 
+createSkillsSheet(knowledge)

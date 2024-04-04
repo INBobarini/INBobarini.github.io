@@ -34,9 +34,6 @@ html {
 	); //12px(HVGA) to 20px(fHD)
 }
 
-.text {
-	display: inline-block;
-}
 .folder {
 	background-color: var(
 		--clr-folder
@@ -158,7 +155,6 @@ li {
 }
 .bg-id-body {
 	display: flex;
-
 	align-items: center;
 	height: 75%;
 	gap: 10px;
@@ -181,13 +177,13 @@ li {
 }
 
 .a4-page {
-  max-width:21cm;
-  max-height: 29.7cm;
+	max-width: 21cm;
+	max-height: 29.7cm;
 	width: 21cm;
-	height:29.7cm;
+	height: 29.7cm;
 	border: 1px solid black;
-	padding-left: 3%;
-	padding-right: 3%;
+	padding-left: 5%;
+	padding-right: 5%;
 	border-radius: 4px;
 }
 .reqAndRes {
@@ -201,7 +197,9 @@ li {
 	margin-right: 0%;
 }
 .tag {
-	background-color: var(--clr-chalk);
+	background-color: var(
+		--clr-chalk
+	);
 	color: var(--clr-deepred);
 	border: 1px solid;
 	border-radius: 3px;
@@ -209,26 +207,43 @@ li {
 	padding: 0px 2px;
 }
 .tooltip {
-  position: absolute;
-  background-color: #f0f0f0;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensures it appears on top of other elements */
+	position: absolute;
+	background-color: #f0f0f0;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px
+		rgba(0, 0, 0, 0.1);
+	z-index: 1000; /* Ensures it appears on top of other elements */
 }
 .page-header {
-	padding-top: 2%;
-	padding-bottom: 2%;
-	height: 8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 6%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom:2px solid var(--clr-deepred);
+	
 }
 .page-body {
-	height: 85%;
+	display:flex;
+	flex-direction:column;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 80%;
 	position: relative;
 	text-align: justify;
+	
 }
 .page-footer {
-	height: 4%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-top:2px solid var(--clr-deepred);
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 8%;
 	text-align: justify;
 }
 
@@ -236,30 +251,41 @@ li {
 	display: flex;
 	justify-content: space-between;
 	width: 62.5rem;
-	height: 2rem;
+	height: 3rem;
 }
 #left-side-flaps {
 	display: flex;
-	width: max(120px, 20%);
+	width: max(400px, 20%);
 }
-#space-between-flaps {
-	display: flex;
-	width: max(0px, 40%);
-	border-bottom: 2px solid
-		var(--clr-darkgray);
-}
+
 #job-flaps {
-	width: max(240px, 40%);
+	margin-top: 1rem;
+	width: max(600px, 40%);
 	display: grid;
 	grid-template-columns: repeat(
-		4,
-		5rem
+		5,
+		auto
 	);
 	grid-column-gap: 1rem;
 }
+.skills-flap {
+	position: relative;
+	width: 8rem;
+	height: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 0.4rem;
+	background-color: var(
+		--clr-deepred
+	);
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
 
 .flap-binder {
-	border-top-left-radius: 5px;
+	border-top-left-radius: 10px;
 	border-top-right-radius: 30px;
 	background-color: var(
 		--clr-folder
@@ -269,9 +295,9 @@ li {
 	border-bottom: 0;
 	color: var(--clr-darkgray);
 	font-weight: bold;
-	font-size: 20px;
-	width: max(160px, 100%);
-	height: 2rem;
+	font-size: 15px;
+	width: 200px;
+	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -283,7 +309,9 @@ li {
 	);
 	border: 0.5px solid
 		var(--clr-darkgray);
-	font-size: 0.75em;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 2px 2px;
 }
 .flap-sheet {
 	border-top-left-radius: 20px;
@@ -297,15 +325,14 @@ li {
 .binder {
 	height: 34rem;
 	width: 62.5rem;
-	
 	border: 2px solid
 		var(--clr-darkgray);
 	border-top: 0;
 }
 
 .binder-cover {
-	height: 34rem;
-	width: 62.1rem;
+	height: 100%;
+	width: 100%;
 	background-color: var(
 		--clr-folder
 	);
@@ -314,7 +341,8 @@ li {
 	bottom: 0rem;
 }
 
-.sheet-page, .skills-sheet {
+.sheet-page,
+.skills-sheet {
 	width: 61rem;
 	display: grid;
 	grid-template-rows:
@@ -344,14 +372,11 @@ li {
 	justify-content: flex-start;
 	align-items: center;
 	padding-top: 0.4rem;
-	
 	background-color: var(
 		--clr-deepred
 	);
-	color: var(--clr-chalk);
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
-	
 }
 
 .first-row {
@@ -455,6 +480,6 @@ li {
 }
 .position-relative-5 {
 	position: relative;
-	left: 1rem;
-	bottom: 135.25rem;
+	left: 1.25rem;
+	bottom: 169rem;
 }

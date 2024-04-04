@@ -22,15 +22,25 @@
                         <div class="name-label">Iván N. Bobarini</div>
                     </button>
                 </div>
-                <div id="space-between-flaps"></div>
                 <div id="job-flaps">
-                    <button class='job-flap' id="flap-INTI" onclick='bringToTop("INTI")''>INTI</button>
-                    <button class=' job-flap' id="flap-INGENIA" onclick='bringToTop("INGENIA")'>INGENIA</button>
-                    <button class='job-flap' id="flap-MG" onclick='bringToTop("MG")'>MG</button>
-                    <button class='job-flap' id="flap-LE" onclick='bringToTop("LE")'>LE</button>
+                    <button class="skills-flap" id="flap-skills-sheet" onclick="bringToTop('skills-sheet')">
+                        <div class="name-label">Conocimientos</div>
+                    </button>
+                    <button class='job-flap' id="flap-INTI" onclick='bringToTop("INTI")'>
+                        <div class="name-label">INTI</div>
+                    </button> 
+                    <button class='job-flap' id="flap-INGENIA" onclick='bringToTop("INGENIA")'>
+                        <div class="name-label">INGENIA</div>
+                    </button>
+                    <button class='job-flap' id="flap-MG" onclick='bringToTop("MG")'>
+                        <div class="name-label">MG</div>
+                    </button>
+                    <button class='job-flap' id="flap-LE" onclick='bringToTop("LE")'>
+                        <div class="name-label">LE</div>
+                    </button>
                 </div>
             </div>
-            <div id="binder" class="binder ">
+            <div id="binder" class="binder">
                 <div id="binder-cover" class="binder-cover position-relative-0">
                     <div id="card-container">
                         <div id="card">
@@ -51,16 +61,17 @@
                     <div id=personal-id-container>
                         <div id="personal-id">
                             <div class="bg-id-upper">
-                                <div>Id card</div>
+                                <div></div>
                             </div>
                             <div class="bg-id-body">
                                 <img class="profile-img" src="/static/IBp.jpg" alt="">
                                 <div class="id-data">
-                                    <p>Name:Iván Natalio Bobarini</p>
+                                    <p><strong>Iván Natalio Bobarini</strong></p>
                                     <p>DNI: 35.529.259</p>
-                                    <p>License: B1</p>
+                                    <p>Licencia: B1</p>
                                     <p>Tel: +54 351 5433-413</p>
-                                    <p>Nationality: Argentina</p>
+                                    <p>Fecha de nacimiento: 23/09/90</p>
+                                    <p>Córdoba, Argentina</p>
                                 </div>
                             </div>
                             <div class="bg-id-lower">
@@ -71,38 +82,36 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
         <div id="selfAssessment" class="a4-page">
-            <div class="page-header">Carta de presentación y autoevaluación</div>
-            <div class="page-body">
+            <div id="sa-header" class="page-header" ><h3>Carta de presentación y autoevaluación</h3></div>
+            <div id="sa-body" class="page-body">
                 <div id="personal-overview"></div>
+                <div id="comment-job-offer"></div>
                 <div id='chart'></div>
-                <div id="evaluation"></div>
             </div>
-            <div class="page-footer">testing 2</div>
+            <div id="sa-footer" class="page-footer"></div>
         </div>
-        <div class="a4-page">
-            <div class="page-header">
-
+        <div id="job-offer" class="a4-page">
+            <div class="page-header" id="job-offer-header">
+                Oferta
             </div>
             <page class="page-body" id="job-offer-body">
 
             </page>
-            <div class="page-footer">
+            <div class="page-footer" id="job-offer-footer">
 
             </div>
         </div>
 
     </div>
-
 </body>
 
 
 <script src="/static/pastJobSheets.js"></script>
+<script src="/static/compsAndJobs.js"></script>
 <script src="/static/jobReviews.js"></script>
 <script src="/index.js"></script>
 
