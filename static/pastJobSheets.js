@@ -45,51 +45,41 @@ function toggleContent() {
 function createBinderSheet(job,flapOrder){
     let jobData = {
         INTI:{
-            company:"National Institute of Industrial Technology - (Jul. 2021 – Sep. 2022)",
-            title:"Quality Management Systems Auditor – Conformity Assessment",
-            lines:[
-                "Conducted management-technical audits for RELIAU (conformity assessment body for testing laboratories in vehicle safety systems)", 
-                "following ISO/IEC 17025, FMVSS, UN ECE regulations, and IRAM standards",
-                "Developed internal procedures for INTI-RELIAU to govern third-party audit processes, in compliance with ISO/IEC 17011.",
-                "Performed documentary audits and developed on-site audit plans."
+            company:"Instituto Nacional de Tecnología Industrial  - (Jul. 2021 – Sep. 2022)",
+            title:"Auditor de Sistemas de Gestión de Calidad – Evaluación de la conformidad",
+            description:[
+                "Realización de auditorías de gestión - técnicas para la RELIAU (organismo de evaluación de la conformidad de laboratorios de ensayos a sistemas de seguridad vehicular), de acuerdo a estándares ISO/IEC 17025, FMVSS, regulaciones UN ECE y normas IRAM.", 
+                "Elaboración de procedimientos internos de INTI-RELIAU para el proceso de auditorías de tercera parte, basados en el cumplimiento de ISO/IEC 17011.",
+                "Ejecución de auditorías documentales y elaboración de planes de auditoria in situ."
             ]
         },
         INGENIA:{
-            company:"Ingenia S.A - (Jan. 2021 – Jul. 2021)",
-            title:"Project Coordinator",
-            lines:[
-                "Task and resource planning based on the requirements of the bidding specifications from the",
-                "Municipality of Córdoba.",
-                "Improved monitoring and performance evaluation of work crews by implementing a control",
-                "dashboard, automatically generated from indicator calculations and presentation of results."
+            company:"Ingenia S.A (mar. 2021- jul. 2021)",
+            title:"Coordinador de proyectos - Gestión de Proyectos",
+            description:[
+                "Planificación de tareas y recursos a partir de los requisitos de los pliegos de licitación de la municipalidad de Córdoba.",
+                "Mejora del seguimiento y evaluación del desempeño de las cuadrillas, mediante la implementación de un tablero de control, obtenido automáticamente a partir del cálculo de indicadores y presentación de resultados.",
             ]
         },
         MG:
         {
-            company:"Metalúrgica Gerbaudo S.A. - (Jan. 2019 - Jul. 2020)",
-            title:"Laboratory and Management Systems Manager",
-            lines:[
-                "Developed calibration laboratory No.6 of INTI-SAC in the field of dimensional metrology. Among my activities were:",
-                "Design, development, and implementation of a Laboratory Management System for calibrations in",
-                "accordance with ISO/IEC 17025:2017 and INTI – SAC requirements.",
-                "Design and development of a Production Management System in accordance with ISO 9001:2015 and API SPEC Q1.",
-                "Survey of needs and issues in the areas to address their treatment and resolution through the",
-                "developed Management Systems.",
-                "Training for the involved areas on the importance of compliance with regulations and the",
-                "operation of the system's procedures and records.",
-                "Development and implementation of calibration procedures for measuring instruments and",
-                "thread gauges based on API and ISO standards",
-                "Conducted internal audits, formulated corrective actions, and action plans."
+            company:"Metalúrgica Gerbaudo S.A. - (Ene. 2019 - Abr. 2020)",
+            title:"Responsable de Control de Calidad y desarrollo de Sistemas de Gestión",
+            description:[
+                "Diseño, desarrollo e implantación de un Sistema de Gestión de Laboratorio de calibraciones de acuerdo con ISO/IEC, 17025:2017 y requisitos del INTI – SAC.",
+                "Diseño y desarrollo de un Sistema de Gestión de la Producción de acuerdo con ISO 9001:2015 y API SPEC Q1.",
+                "Relevamiento de necesidades y problemáticas de las áreas para abordar su tratamiento y resolución a través de los Sistemas de Gestión desarrollados.",
+                "Capacitaciones a las áreas involucradas sobre la importancia de la normativa a cumplir y el funcionamiento de los procedimientos y registros del sistema.",
+                "Elaboración e implantación de los procedimientos de calibración de instrumentos de medición y calibres de roscas, a partir de normas API e ISO.",
+                "Recepción de auditorías internas, formulación de acciones correctivas y planes de acción"
             ]
         },
         LE:{
-            company:"Laboratorio de Estructuras – FCEFyN – UNC - (Aug. 2017 - Dec. 2018)",
-            title:"Quality Assistant",
-            lines:[
-                "Identification and resolution of Non-Conformities in the management system to maintain OAA",
-                "accreditation.",
-                "Monitoring of occupational risks and proposal of associated improvements for the",
-                "Occupational Health and Safety Office at FCEFyN."
+            company:"Laboratorio de Estructuras – FCEFyN – UNC - (Ago. 2017 - Dic. 2018)",
+            title:"Asistente de Gestión de Calidad",
+            description:[
+                "Levantamiento de No Conformidades del sistema de gestión mantenimiendo la acreditación del OAA.",
+                "Monitoreo de riesgos laborales y propuestas de mejoras asociadas, para la oficina de Higiene y Seguridad de la FCEFyN.",
             ]
         }
     }    
@@ -121,10 +111,16 @@ function createBinderSheet(job,flapOrder){
     sheetContainer.querySelector("#title").textContent = jobData[`${job}`].company;
     sheetContainer.querySelector("#subTitle").textContent = jobData[`${job}`].title;
     let spaces = sheetContainer.querySelectorAll(".empty-line");
-    for (let i=0;i<jobData[`${job}`].lines.length;i++){  
-        if (jobData[`${job}`].lines.length>spaces.length){console.log("not enough spaces in the sheet")}
-        spaces[i].textContent = jobData[`${job}`].lines[i]
+    let descriptionStr = jobData[job].description.reduce((acc,cur)=>acc+cur+"\n",'')
+    
+    let arrDescription = strToArr(descriptionStr,90) //adjust according to sheet width
+    for(let i=0;i<spaces.length;i++){
+        spaces[i].textContent = arrDescription[i];
+        if(i+1>arrDescription.length){
+            break
+        }
     }
+   
     sheetContainer.classList.add("sheet-page");
     sheetContainer.classList.add(`position-relative-${flapOrder}`);
     sheetContainer.id = job
@@ -140,7 +136,6 @@ function createSkillsSheet(obj){
     let sheetContainer = document.createElement('div');
     sheetContainer.classList.add("skills-sheet");
     sheetContainer.id = "skills-sheet"
-    
     let sheetHtml=`
             <div class="first-row">
                 <h2 id="title"></h2>
@@ -189,13 +184,14 @@ let knowledge = {
         ],
         "Uso de herramientas informáticas":[
             "Microsoft Excel: avanzado. Microsoft PowerBI: intermedio.",
-            "Programación: Javascript(avanzado). HTML(intermedio). CSS(intermedio). Svelte(principiante). SQL: intermedio"
+            "Programación: Javascript(avanzado). HTML(intermedio). CSS(intermedio).", 
+            "Svelte(principiante). SQL: intermedio",
         ],
-        "Idiomas":["Ingles: avanzado (proficiencia escrita: C1, oral: B2). Español: Nativo."],
+        "Idiomas":["Inglés: avanzado (proficiencia escrita: C1, oral: B2). Español: Nativo."],
         "Cursos":[
             "Programación Backend (Coderhouse)",
-            "GC-19 Gestión de la Calidad bajo ISO/IEC 17025:2017",
-            "“La Filosofía 5S, base de toda Mejora Continua” (ECKMA – FCEFyN)"
+            "GC-19 Gestión de la Calidad bajo ISO/IEC 17025:2017 (IRAM)",
+            "La Filosofía 5S, base de toda Mejora Continua (ECKMA – FCEFyN)"
         ]
     }
 }

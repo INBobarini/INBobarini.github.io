@@ -1,19 +1,4 @@
-function multiLineString(str, lineLength){
-    if(!str.length) return "empty string"
-    let count = 0;
-     
-    let multiLineStr = '';
-    for(let i=0;i<str.length;i++){
-        if (str[i] === ' ' && (i-count) > lineLength){
-            multiLineStr += str.slice(count,i)+'<br>'
-            count=i;
-        }
-        if(i+1===str.length){
-            multiLineStr += str.slice(count,i+1)
-        }
-    }
-    return multiLineStr;
-}
+
 function hoverIcon(k){
     let tooltip = document.createElement('div');
     tooltip.classList.add('tooltip');
@@ -206,11 +191,13 @@ function fillselfPresentation(divId, personalOverview){
         `<p>${p}</p>`)
 }
 
-
+fillselfPresentation('personal-overview', selfAssessment.presentation)
 if(urlParams.has('jk')){
-    fillselfPresentation('personal-overview', selfAssessment.presentation)
+    
     const jobKey = urlParams.get('jk')
+    
     if(!jobs[jobKey]) {
+        
         console.log("loaded with no job offer"); 
     } 
     else{
@@ -231,5 +218,9 @@ if(urlParams.has('jk')){
         jobOffer.evaluate("job-offer-body", evalJobArr)
         drawCompetencesChart("chart", selfEval, evalJobArr)
     }
+}
+else{
+    let jobOfferPage = document.querySelector("#job-offer")
+    jobOfferPage.style.display = 'none'
 }
 
