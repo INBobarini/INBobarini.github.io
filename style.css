@@ -223,6 +223,8 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	border-bottom:2px solid var(--clr-deepred);
+	padding-top:3rem;
+	padding-bottom: 2rem;
 	
 }
 .page-body {
@@ -233,6 +235,8 @@ h1 {
 	height: 80%;
 	position: relative;
 	text-align: justify;
+	padding-top:0.5rem;
+	padding-bottom:1rem;
 	
 }
 .page-footer {

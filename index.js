@@ -22,8 +22,6 @@ function setZindexes(){
     });
 }
 
-
-
 function bringToTop(id) {
     const highestId = Object.keys(zIndexes).reduce((a, b) => 
         zIndexes[a] > zIndexes[b] ? a : b

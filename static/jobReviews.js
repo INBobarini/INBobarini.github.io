@@ -40,10 +40,23 @@ function drawCompetencesChart(divId,selfEval,evalJobArr){
         return totals
     }
     //checking if both arrays have the same keys could be useful
-    let jobResult = sumEvals(evalJobArr)
-    let jobKeys = Object.keys(jobResult)
-    let jobValues = Object.values(jobResult)
-    let labels = jobKeys.map(k=>multiLineString(competence.GC[k].name,10))
+    let jobResult = []
+    let jobValues = []
+    let jobKeys = []
+
+    if(evalJobArr) {
+        jobResult = sumEvals(evalJobArr)
+        jobValues = Object.values(jobResult)
+        jobKeys = Object.keys(jobResult)
+    }
+    else{
+        
+        jobKeys = Object.keys(selfEval)
+    }
+     
+    let labels = jobKeys.map(k=>multiLineString(competence.GC[k].name,10))  
+    
+
     let selfValues = jobKeys.map(k=>selfEval[k])
 
     let data = [
@@ -73,6 +86,7 @@ function drawCompetencesChart(divId,selfEval,evalJobArr){
             }
         }
     ]
+    
     let layout = {
         polar: {
           radialaxis: {
@@ -172,7 +186,6 @@ class JobOffer{
             reqsAndResps[i].appendChild(textDiv);
             reqsAndResps[i].appendChild(tagsDiv);
         }
-        
     }
 }
 /*function createA4Page(headerContent, bodyContent, Footer){
@@ -192,13 +205,13 @@ function fillselfPresentation(divId, personalOverview){
 }
 
 fillselfPresentation('personal-overview', selfAssessment.presentation)
+
 if(urlParams.has('jk')){
     
     const jobKey = urlParams.get('jk')
     
     if(!jobs[jobKey]) {
-        
-        console.log("loaded with no job offer"); 
+        console.log("job key not found"); 
     } 
     else{
         let evalJobArr = jobs[jobKey].eval
@@ -222,5 +235,6 @@ if(urlParams.has('jk')){
 else{
     let jobOfferPage = document.querySelector("#job-offer")
     jobOfferPage.style.display = 'none'
+    drawCompetencesChart("sa-body", selfAssessment.competences.GC)
 }
 

@@ -14,7 +14,7 @@ let competence = {
 let selfAssessment = {
     presentation:
         ["Mi nombre es Iván Bobarini, soy Ingeniero Industrial, con experiencia en Sistemas de Gestión de Calidad. Durante mi experiencia profesional me he especializado en la definición de metodologías de trabajo eficientes para pymes. Por esta razón en el último año me he dedicado a aprender a programar páginas web, apostando a su versatilidad y masividad en la implementación de ********"],
-    competences:[{
+    competences:{
         GC:{
             AeI:8,
             PA:7, 
@@ -25,10 +25,12 @@ let selfAssessment = {
             Langs:7,
             LyC:7
         },
-        PM:{},
+        PM:{
+
+        },
         BA:{},
         FS:{}
-    }]
+    }
 
 }
 
