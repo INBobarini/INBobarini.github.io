@@ -108,7 +108,7 @@ let jobs = {
         },
         comments:'En cuanto a la propuesta en particular, expuesta en la siguiente página. Creo que soy un buen candidato'
     },
-    elemce:{
+    "240424":{
         source:"https://ar.computrabajo.com/trabajo-de-jefe-de-aseguramiento#68D7C9138D8BD4B061373E686DCF3405",
         announcer: "Anónimo",
         description:{
