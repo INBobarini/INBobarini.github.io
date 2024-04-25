@@ -124,7 +124,7 @@ class JobOffer{
     }
     comment(divId){
         const div = document.getElementById(divId)
-        div.innerHTML = this.comments
+        div.innerHTML = this.comments.map(c=>`<p>${c}</p>`).join('')
     }
     write(divId){
         const div = document.getElementById(divId)
@@ -146,9 +146,9 @@ class JobOffer{
                 </ul>
             `;
         if(this.source){
-            console.log(this.source)
+            
             const jobOfferFooter = document.getElementById("job-offer-footer")
-            jobOfferFooter.innerHTML = `<a href="${this.source}">Link a la Oferta</a>`
+            jobOfferFooter.textContent = this.source
         }
         } else {
             console.error(`Element with ID ${divId} not found.`);
@@ -201,7 +201,7 @@ const urlParams = new URLSearchParams(queryString);
 function fillselfPresentation(divId, personalOverview){
     let personalOverviewDiv = document.querySelector(`#${divId}`)
     personalOverviewDiv.innerHTML = personalOverview.map(p=>
-        `<p>${p}</p>`)
+        `<p>${p}</p>`).join('')
 }
 
 fillselfPresentation('personal-overview', selfAssessment.presentation)
@@ -226,6 +226,7 @@ if(urlParams.has('jk')){
             jobs[jobKey].comments,
             jobs[jobKey].source
         )
+    
         jobOffer.write("job-offer-body")
         jobOffer.comment("comment-job-offer")
         jobOffer.evaluate("job-offer-body", evalJobArr)

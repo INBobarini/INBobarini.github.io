@@ -191,7 +191,8 @@ let knowledge = {
         "Cursos":[
             "Programación Backend (Coderhouse)",
             "GC-19 Gestión de la Calidad bajo ISO/IEC 17025:2017 (IRAM)",
-            "La Filosofía 5S, base de toda Mejora Continua (ECKMA – FCEFyN)"
+            "La Filosofía 5S, base de toda Mejora Continua (ECKMA – FCEFyN)",
+            "CA-04 Formación de auditores internos de sistemas de gestión de la calidad IRAM ISO 9001:2015"
         ]
     }
 }

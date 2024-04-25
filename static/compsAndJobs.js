@@ -13,7 +13,12 @@ let competence = {
 
 let selfAssessment = {
     presentation:
-        ["Mi nombre es Iván Bobarini, soy Ingeniero Industrial, con experiencia en Sistemas de Gestión de Calidad. Durante mi experiencia profesional me he especializado en la definición de metodologías de trabajo eficientes para pymes. Por esta razón en el último año me he dedicado a aprender a programar páginas web, apostando a su versatilidad y masividad en la implementación de ********"],
+    [
+        "Mi nombre es Iván Bobarini, Ingeniero Industrial egresado de la UNC.",
+        "Durante mi trayectoria profesional, me he especializado en definir metodologías de trabajo eficaces para pymes, cumpliendo con los requisitos normativos de las normas ISO y API. Mis sistemas de gestión, así como las metodologías individuales que he desarrollado, se caracterizan por adaptarse a la organización y sus necesidades específicas, lo que ha llevado a una reducción de la incertidumbre operativa y a procesos más fiables y eficaces.",
+        "En el último año, he dedicado tiempo a ampliar mis habilidades y conocimientos en desarrollo web con el objetivo de crear aplicaciones personalizadas para el registro de datos, alineadas con el flujo de trabajo de la actividad correspondiente.",
+        "Considero fundamental la capacidad de tomar el control de nuestro propio trabajo para aumentar la productividad personal."
+    ],
     competences:{
         GC:{
             AeI:8,
@@ -102,4 +107,59 @@ let jobs = {
             LyC:6,
         },
         comments:'En cuanto a la propuesta en particular, expuesta en la siguiente página. Creo que soy un buen candidato'
-    }}
+    },
+    elemce:{
+        source:"https://ar.computrabajo.com/trabajo-de-jefe-de-aseguramiento#68D7C9138D8BD4B061373E686DCF3405",
+        announcer: "Anónimo",
+        description:{
+            title: "Jefe de Aseguramiento de Calidad",
+            company: "Importante Empresa Industrial líder en su rubro",
+            reqs: [
+                "formación de grado en carreras de Ingeniería",
+                "desempeño en la Industria Metalúrgica, Automotriz o Plástica",
+                "3 años de experiencia"
+            ],
+            resps: [
+                "tendrá a su cargo un estricto sistema de calidad,",
+                " bajo normas norteamericanas de la Industria Petrolera",
+                "liderando un equipo de profesionales altamente capacitados",
+                "diseño de los planes de calidad",
+                "para el desarrollo de nuevos productos y tecnologías",
+                "gestionando auditorias internacionales",
+                
+            ],
+            benefits:  [ 
+                "Prepaga de 1° nivel",
+                "Comedor en Planta",
+                "Transporte diario."
+            ]
+        },
+        eval: [
+            [{PA:4}],
+            [{ExpRub:2}],
+            [{ExpRub:2}],
+            [{DSG:5},{Langs:1}],
+            [{NyE:3}],
+            [{LyC:7}],
+            [{DSG:2},{NyE:2},{AeI:2},{HI:3},{PA:3}],
+            [{ExpRub:3},{NyE:2},{NyE:2}],
+            [{AeI:4},{Langs:6}],
+        ],
+        selfEval:{
+            AeI:7,
+            PA:7, 
+            HI:8,
+            NyE:8,
+            DSG:9,
+            ExpRub:6,
+            Langs:8,
+            LyC:6,
+        },
+        comments:[
+            'Considero que podría adaptarme rápídamente al puesto en cuestión, tengo claro los procesos de auditorías y he interpretado normas especificas de productos API (5b, 7-2 y 11b).',
+            "Tambien que puedo desarrollar el Liderazgo y Comunicación necesarios a medida que me familiarice con las normas y tecnologías de producción propios de la empresa.",
+            "Me parece que mi diferencial frente a otros postulantes puede ser en que yo tenga una mayor flexibilidad para generar información para las partes interesadas y/o usuarios de los Planes de Calidad."
+        ]
+    }
+
+}
