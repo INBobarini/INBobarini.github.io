@@ -40,6 +40,74 @@ let selfAssessment = {
 }
 
 let jobs = {   
+    pentaplast:{
+        source:"",
+        announcer: "Pentaplast",
+        description:{
+            title: "Analista SGI",
+            company: "Pentaplast",
+            reqs: [
+                "Ser graduado en Ing. Química",
+                "Conocimiento sobre films de PVC.",
+                "Conocimiento de Legislación en Seguridad, salud y medioambiente",
+                "Tener 2 años de experiencia en puestos similares.",
+                "Ser auditor interno (deseable)",
+                "Habilidad para comunicarse en inglés.",
+                ],
+            resps: [
+                "Responsable de gestionar el cumplimiento del Sistema de Gestión Integral en coordinación con el resto de las áreas. ",
+                "Reportar directamente a la Gerencia de Calidad, Seguridad y Medioambiente",
+                "Promover y ejecutar acciones para alcanzar los objetivos, metas y programa del SGI",
+                "Supervisar la actualización de documentos. ",
+                "Planificar y realizar auditorías internas del SGI y comunicación interna de los resultados. ",
+                "Crear Plan de capacitación al personal de planta en temas de Calidad, Seguridad y Medio Ambiente. ",
+                "Supervisar los controles de materia prima y productos en proceso. ",
+                "Dar soporte en las auditorías de clientes. ",
+                "Generar reportes para respuestas a reclamos.",
+                "Gestionar y dar seguimiento a acciones preventivas y correctivas junto con las áreas involucradas. ",
+                "Gestionar la implementación de normas ambientales y SySO. Relevar, identificar y valorar aspectos ambientales y riesgos laborales de la planta. ",
+                "Promover el trabajo seguro en todas las posiciones de la organización. ",
+                "Inspeccionar la separación y recolección de los residuos y disposición de residuos peligrosos. ",
+                "Conocer las medidas de contención y control de los aspectos ambientales y los riesgos. ",
+                "Realizar trámites técnico-administrativos ante los Organismos Públicos de control del orden nacional, provincial y municipal. "
+            ],
+            benefits:  [ 
+                
+            ]
+        },
+        eval: [
+            [{PA:2}],
+            [{ExpRub:2}],
+            [{ExpRub:1}],
+            [{ExpRub:2}],
+            [{AeI:4}],
+            [{Langs:7}],
+            [{AeI:2},{DSG:2}],
+            [{LyC:2}],
+            [{NyE:2}],
+            [{AeI:2}],
+            [{LyC:2},{DSG:1}],
+            [{DSG:1}],
+            [{NyE:3},{AeI:2}],
+            [{PA:2},{LyC:1}],
+            [{PA:2},{ExpRub:2}],
+            [{DSG:1}],
+            [{DSG:1}],
+            [{LyC:1},{HI:3}],
+            [{LyC:3},{ExpRub:3}]
+        ],
+        selfEval:{
+            AeI:8,
+            PA:7, 
+            HI:8,
+            NyE:8,
+            DSG:9,
+            ExpRub:6,
+            Langs:7,
+            LyC:6,
+        },
+        comments:[]
+    },
     ejegmk9:{
         source:"https://ar.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-analista-de-calidad-jr-en-cordoba-CCC04F5F54DF748361373E686DCF3405",
         announcer: "handSelection",
