@@ -40,7 +40,7 @@ let selfAssessment = {
 }
 
 let jobs = {   
-    pentaplast:{
+    eeeef:{
         source:"",
         announcer: "Pentaplast",
         description:{
